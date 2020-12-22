@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>How long since...</title>
+    <meta property="og:title" content="Since 2020 Dec" />
+    <style>
+      body {
+        font-size: 4rem;
+      }
+      div {
+        margin: 3rem 3rem 3rem 3rem;
+      }
+      p {
+        margin: 6rem 5rem 3rem 3rem;
+      }
+
+      .intro {
+        font-size: 0.8px;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <p>YH & YF aparts</p>
+    <div id="intro"></div>
+    <br />
+    <div id="root"></div>
+    <script>
+      var emoji = "🍎 ";
+      function getDaysPassed(y1, m1, d1) {
+        // change your start and end date here
+        startDate = new Date(y1, m1, d1); // jan = 0, feb = 1, etc
+        endDate = new Date();
+        msInOneDay = 1000 * 60 * 60 * 24;
+        days = Math.floor((endDate - startDate) / msInOneDay);
+        // console.log({ startDate, endDate, days });
+        return days;
+      }
+
+      count = getDaysPassed(2020, 11, 20);
+      document.getElementById("root").innerText = emoji.repeat(count);
+      document.getElementById("intro").innerText = "One 🍎 = one day;";
+    </script>
+  </body>
+  <footer></footer>
+</html>
